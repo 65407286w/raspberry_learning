@@ -1,0 +1,10 @@
+树莓派入门教程：
+http://www.ruanyifeng.com/blog/2017/06/raspberry-pi-tutorial.html
+LED 控制脚本：
+  npm init -y 新建一个 当前目录中提取的信息生成默认的package.json
+  npm install -S rpio 安装rpio库
+  新建一个脚本led-on.js： 
+    vi led-on.js
+      VIM 保存 esc :wq!
+      liunx 删除 rm
+     
