@@ -5,6 +5,7 @@ LED 控制脚本：
   npm install -S rpio 安装rpio库
   新建一个脚本led-on.js： 
     vi led-on.js
+      
       VIM 保存 esc :wq!
       liunx 删除 rm
-     
+      关机 sudo shutdown -h now
