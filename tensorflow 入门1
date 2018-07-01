@@ -1,0 +1,1 @@
+tf.enable_eager_execution() 调试用的 使得tensorflow 变成实时处理的模式
