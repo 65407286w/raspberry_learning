@@ -1,0 +1,1 @@
+记录一下 ros 摄像头命令 rosrun usb_cam usb_cam_node _pixel_format:=yuyv
