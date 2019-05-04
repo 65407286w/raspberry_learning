@@ -1,0 +1,65 @@
+首先查看本机的protoc的版本
+
+protoc --version
+1
+我的机器在安装之前输出的是2.6.1版本的protoc，那是我通过如下的命令安装的：
+
+sudo apt install protobuf-compiler
+1
+我的机器上出现因protoc版本过低导致如下的错误输出：
+
+(tf) liuqiang@liuqiang:~/models/research$ protoc object_detection/protos/*proto --python_out=.
+object_detection/protos/ssd.proto:87:3: Expected "required", "optional", or "repeated".
+object_detection/protos/ssd.proto:87:12: Expected field name.
+object_detection/protos/model.proto: Import "object_detection/protos/ssd.proto" was not found or had errors.
+object_detection/protos/model.proto:12:5: "Ssd" is not defined.
+
+1
+2
+3
+4
+5
+6
+接着去官方的下载地址下载最新版本的protoc
+https://github.com/protocolbuffers/protobuf/releases
+我下载的是当前最新版本的二进制解压安装包protoc-3.6.1-linux-x86_64.zip
+
+sudo apt-get install unzip
+unzip protoc-3.6.1-linux-x86_64.zip -d protoc-3.6.1-linux-x86_64 #解压,或者鼠标右键解压即可
+sudo mv protoc-3.6.1-linux-x86_64/ /opt
+cd /opt/protoc-3.6.1-linux-x86_64/bin
+chmod +x protoc #这一步很必要，否则执行的还是2.6.1版本的
+export PATH=/opt/protoc-3.6.1-linux-x86_64/bin:$PATH
+source ~/.bashrc
+1
+2
+3
+4
+5
+6
+7
+安装完成后就可以去测试了：
+
+liuqiang@liuqiang:~$ source activate tf
+(tf) liuqiang@liuqiang:~$ cd ~/models/research
+(tf) liuqiang@liuqiang:~/models/research$ protoc object_detection/protos/*proto --python_out=.
+(tf) liuqiang@liuqiang:~/models/research$ protoc --version
+libprotoc 3.6.1
+(tf) liuqiang@liuqiang:~/models/research$ 
+1
+2
+3
+4
+5
+6
+根据输出的结果可以看出，新版本的protoc安装完成了。
+解压安装的一个好处就是用户可以随时切换protoc的版本，特别是当计算机的环境比较复杂的时候，要兼容其他的项目，可能需要多个版本的protoc共存.当我们需要低一点的版本时，只需要在.bashrc中注释掉如下的一行即可：
+
+export PATH=/opt/protoc-3.6.1-linux-x86_64/bin:$PATH
+1
+然后执行source ~/.bashrc命令即可。
+--------------------- 
+作者：l1216766050 
+来源：CSDN 
+原文：https://blog.csdn.net/l1216766050/article/details/86145778 
+版权声明：本文为博主原创文章，转载请附上博文链接！
