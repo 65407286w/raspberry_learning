@@ -8,3 +8,4 @@
 source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
+export LD_LIBRARY_PATH=/catkin_ws/src/xf_rsp/libs/RaspberryPi
