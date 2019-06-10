@@ -9,3 +9,6 @@ source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 export LD_LIBRARY_PATH=/catkin_ws/src/xf_rsp/libs/RaspberryPi
+
+roscd 工作环境 添加
+export ROS_PACKAGE_PATH=~/catkin_ws/src:$ROS_PACKAGE_PATH
