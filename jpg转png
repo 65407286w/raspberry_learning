@@ -1,0 +1,16 @@
+2、 使用 GNU 的parallel命令来转换 PNG 和 JPG
+GNU 的 parallel 使用户能够从标准输入并行构建和执行 shell 命令。确保您的系统上安装了 GNU Parallel，否则请使用以下适当的命令进行安装：
+
+$ sudo apt-get install parallel [在 Debian/Ubuntu 系统中]
+$ sudo yum install parallel [在 RHEL/CentOS 和 Fedora 系统中]
+安装好parallel工具后，您就可以运行下面的命令来把所有从标准输入的.PNG 图像转换成 .JPG格式的图像。
+
+----------- 从 PNG 转换到 JPG -----------
+$ parallel convert '{}' '{.}.jpg' ::: *.png
+----------- 从 JPG 转换到 PNG -----------
+$ parallel convert '{}' '{.}.png' ::: *.jpg
+--------------------- 
+作者：Jack__CJ 
+来源：CSDN 
+原文：https://blog.csdn.net/jack__cj/article/details/53690618 
+版权声明：本文为博主原创文章，转载请附上博文链接！
