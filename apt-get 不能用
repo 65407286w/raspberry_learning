@@ -1,1 +1,6 @@
-nameserver 8.8.8.8
+vim /etc/resolv.conf
+
+添加：nameserver 8.8.8.8
+
+然后执行：sudo /etc/init.d/networking restart
+
