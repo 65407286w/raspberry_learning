@@ -4,3 +4,5 @@ vim /etc/resolv.conf
 
 然后执行：sudo /etc/init.d/networking restart
 
+另一种情况ros 的apt不能用
+http://wiki.ros.org/kinetic/Installation/Ubuntu#Installation.2BAC8-Ubuntu.2BAC8-Sources.Setup_your_sources.list
